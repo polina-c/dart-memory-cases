@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:linked_disposed/generator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,11 +29,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  final _storage = Storage();
+  int _increment = 10000;
 
   void _incrementCounter() {
     setState(() {
-      _counter++;
+      _storage.addLinks(_increment);
+      _increment = _increment * 2;
     });
   }
 
@@ -47,10 +50,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'You have created this many disposed references:',
             ),
             Text(
-              '$_counter',
+              '${_storage.links.length}',
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
@@ -58,9 +61,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        tooltip: 'Increment',
+        tooltip: 'Add References',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
