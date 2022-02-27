@@ -30,7 +30,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final _storage = Storage();
-  int _increment = 10000;
+  int _increment = 100000;
 
   void _incrementCounter() {
     setState(() {
@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have created this many disposed references:',
+              'You are referencing this many objects:',
             ),
             Text(
               '${_storage.links.length}',
