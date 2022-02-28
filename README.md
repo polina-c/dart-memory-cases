@@ -1,3 +1,3 @@
 # Dart Memory Cases
 
-This repository contains examples that illustrate dart memory issues.
+This repository contains examples to illustrate dart memory issues.
