@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:linked_disposed/generator.dart';
+import 'generator.dart';
 
 void main() {
   runApp(const MyApp());
